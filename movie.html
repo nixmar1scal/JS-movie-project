@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css" />
     <script src="/app.js" defer></script>
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-</head>
-<body>
-    <section></section>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section id="landing__movies">
+      <div class="row">
+        <nav>
+          <img class="nav__logo" src="./assets/watcha logo.png" alt="" />
+          <div class="nav__links">
+            <a class="nav__link--browse link__hover-effect" href="#">Home</a>
+            <a
+              class="nav__link--browse link__hover-effect hover__black"
+              href="#"
+              >Find movie</a
+            >
+            <a class="nav__link--browse nav__btn--browse" href="#">Contact</a>
+          </div>
+        </nav>
+      </div>
+      <header>
         <div class="row">
-          <nav>
-            <img class="nav__logo" src="./assets/watcha logo.png" alt="">
-            <div class="nav__links">
-                <a class="nav__link link__hover-effect hover__turquoise" href="#"><span class="turquoise">Home</span></a>
-                <a class="nav__link link__hover-effect hover__black" href="#">Find movie</a>
-                <a class="nav__link nav__btn" href="#">Contact</a>
+          <div class="header__info">
+            <h1 class="browse__title">Browse your movie</h1>
+            <div class="input__wrapper--browse">
+              <input class="input__browse" type="text" placeholder="Search Movie" />
+              <div class="btn__search--browse">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
+              </div>
             </div>
-          </nav>
+          </div>
         </div>
+          <img
+            class="overlay__img"
+            src="https://img.freepik.com/free-vector/movie-film-strip-blue-background_1017-33458.jpg"
+            alt=""
+          />
+          <div class="divider"></div>
+      </header>
     </section>
+
     <section>
-    <div class="movie">
-        <figure class="movie__img--wrapper">
-          <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BNTYwMDg5MDItNjhmZi00NmVmLThjNWItMmNkMjVkMWRhNzI2XkEyXkFqcGc@._V1_SX300.jpg" alt="">
-        </figure>
-        <div class="movie__title">
-          venom
-        </div>
-        <div class="movie__price">
-          <span class="movie__price--normal">$59.95</span> $14.95
+      <div class="search__movies">
+        <div class="row">
+          <div class="movies">
+            <div class="movie">
+              <figure class="movie__img--wrapper">
+                <img
+                  class="movie__img"
+                  src="https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_SX300.jpg"
+                  alt=""
+                />
+              </figure>
+              <div class="movie__info">
+                <p><b>Title:</b> The Avengers</p>
+                <p><b>Release date:</b> 2018</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-</body>
+  </body>
 </html>
