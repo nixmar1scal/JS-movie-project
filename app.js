@@ -1,11 +1,23 @@
-async function main() {
-    const response = await fetch("https://www.omdbapi.com/?apikey=e1e9d522&s=avengers");
-    const moviesData = await response.json();
-    const movies = moviesData.Search;
-    const movieListEl = document.querySelector(".movies");
-    movieListEl.innerHTML = movies
-      .map(
-        (movie) => `
+const movieListEl = document.querySelector(".movies");
+const searcjInputEl = document.querySelector(".search-input");
+
+function onSearchChange(event) {
+  const searchQuery = event.target.value;
+  main(searchQuery);
+}
+
+async function main(searchQuery) {
+  const response = await fetch(
+    `https://www.omdbapi.com/?apikey=e1e9d522&s=${searchQuery}`
+  );
+  const moviesData = await response.json();
+  const movies = moviesData.Search;
+  
+  movieListEl.innerHTML = movies.map((movie) => movieHTML(movie)).join("");
+}
+
+function movieHTML(movie) {
+    return `
         <div class="movie">
           <figure class="movie_img--wrapper">
             <img 
@@ -20,8 +32,8 @@ async function main() {
           </div>
         </div>
       `
-      )
-      .join("");
-  }
-  
-  main();
+}
+
+searchInputEl.addEventListener("input", onSearchChange);
+
+main();
