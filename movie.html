@@ -35,7 +35,7 @@
           <div class="header__info">
             <h1 class="browse__title">Browse your movie</h1>
             <div class="input__wrapper--browse">
-              <input class="input__browse" type="text" placeholder="Search Movie" onchange="onSearchChange(event)"/>
+              <input class="search__input" type="text" placeholder="Search Movie" onchange="onSearchChange(event)"/>
               <button class="btn__search--browse"><i class="fa-solid fa-magnifying-glass icon"></i></button>  
             </div>
           </div>
@@ -53,18 +53,8 @@
       <div class="search__movies">
         <div class="row">
           <div class="movies">
-            <div class="movie">
-              <figure>
-                <img
-                  class="movie__img"
-                  src="https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_SX300.jpg"
-                  alt=""
-                />
-              </figure>
-              <div class="movie__info">
-                <p><b>Title:</b> The Avengers</p>
-                <p><b>Year:</b> 2018</p>
-              </div>
+            <div class="spinner hidden">
+              <i class="fas fa-spinner"></i>            
             </div>
           </div>
         </div>

@@ -1,23 +1,29 @@
 const movieListEl = document.querySelector(".movies");
-const searcjInputEl = document.querySelector(".search-input");
+const spinnerEl = document.querySelector(".spinner");
 
-function onSearchChange(event) {
-  const searchQuery = event.target.value;
-  main(searchQuery);
+function init() {
+  fetchMovies("avengers");
 }
 
-async function main(searchQuery) {
+function onSearchChange(event) {
+  const query = event.target.value;
+  fetchMovies(query);
+}
+
+async function fetchMovies(query) {
+  spinnerEl.classList.remove("hidden");
   const response = await fetch(
-    `https://www.omdbapi.com/?apikey=e1e9d522&s=${searchQuery}`
+    `https://www.omdbapi.com/?apikey=e1e9d522&s=${query}`
   );
   const moviesData = await response.json();
   const movies = moviesData.Search;
-  
+
   movieListEl.innerHTML = movies.map((movie) => movieHTML(movie)).join("");
+  spinnerEl.classList.add("hidden");
 }
 
 function movieHTML(movie) {
-    return `
+  return `
         <div class="movie">
           <figure class="movie_img--wrapper">
             <img 
@@ -31,9 +37,7 @@ function movieHTML(movie) {
             <p><b>Release date:</b> ${movie.Year}</p>
           </div>
         </div>
-      `
+      `;
 }
 
-searchInputEl.addEventListener("input", onSearchChange);
-
-main();
+init();

@@ -240,9 +240,10 @@ MOVIES
   max-width: 700px;
 }
 
-.input__browse {
+.search__input {
   border-radius: 50px;
   border: none;
+  font-weight: 100;
 }
 
 .icon {
@@ -326,4 +327,23 @@ MOVIES
 
 .search__movies {
   padding-top: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.fa-spinner {
+  animation: rotate 550ms infinite; 
+  color: #0097b2;
+  font-size: 50px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: matrix(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
